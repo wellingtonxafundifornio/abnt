@@ -1,0 +1,32 @@
+.title-panel{
+    display: block;
+    font-size: 20px;
+    padding: 10px; 
+    background-color: #ddd;
+    border-bottom: 2px solid #ddd; 
+    margin-top: 0; 
+    text-align: center
+}
+
+.painel{
+    margin-bottom: 20px;
+    margin-top: 20px; 
+    color: #333;
+    border-color: black;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    
+}
+
+.row{
+   padding-left: 10px; 
+   margin: 0;
+}
+
+.painel-carteira-trabalho{
+    display: none;
+}
+
+.painel-tipo-certidao{
+   display: none; 
+}

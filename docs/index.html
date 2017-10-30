@@ -1,11 +1,208 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="utf-8">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>Aula 1</title>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">ABNT</a>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="#identificador" data-toggle="tab" >Identificador</a>
+          <a class="nav-item nav-link" href="#perfil" data-toggle="tab" >Perfil</a>
+          <a class="nav-item nav-link" href="#mensagem" data-toggle="tab" >Mensagem</a>
+          <a class="nav-item nav-link disabled" href="#" >Disabled</a>
+        </div>
+	  </div>
+    </nav>
 
-        <link rel="stylesheet" type="text/css" href="#">
-    </head>
-    <h1>Em construção...</h1>
+		<div class="container">
+		
+		
+            <form class="navbar-form navbar-left" id="formulario">
+             
+             <div class="tab-content">
+                
+                 <div class="tab-pane  fade in  active" id="identificador">
+                    
+                    
+                    <div class="painel">
+                        <label class="title-panel">Identificador</label>
+                        
+                         <div class="row">
+                            <div class="form-group  has-danger col-md-4">
+                                <label class="form-control-label" for="identificacao">Tipo do identificador</label>
+                                <input type="text" name="identificacao" id="identificacao" class="form-control form-control-danger" oninput="mostrarAbaDeAcordoComIdentificador()">
+                                <div class="form-control-feedback">Preenchimento Obrigatório!</div>
+                              </div>
+
+                            <div class="form-group has-danger col-md-4 ">
+                                <label class="form-control-label" for="area-geografica">Área geográfica</label>
+                                <select id="area-geografica" class="form-control form-control-danger"> 
+                                    <option value="">Selecione..</option>
+                                    <option value="1">Local</option>
+                                    <option value="2">Área/região/distrito</option>
+                                    <option value="3">Estado/província/território</option>
+                                    <option value="4">Nacional</option>
+                                </select> 
+                                <div class="form-control-feedback">Preenchimento Obrigatório!</div>
+                              </div>
+                         </div>
+
+                        <div class="row">
+                              <div class="form-group has-danger col-md-4">
+                                <label class="form-control-label" for="designacao">Designacao</label>
+                                <div class="input-group">
+                                    <input type="text" name="designacao" id="designacao" class="form-control form-control-danger">
+                                </div>
+                                    <div class="form-control-feedback">Preenchimento Obrigatório!</div>
+                              </div>
+
+                            <div class="form-group has-danger col-sm-4">
+                                <label class="form-control-label" for="data">Data de Entrega</label>
+                                <div class="input-group date" data-provide="datepicker" data-date-language="pt-BR">
+                                    <input type="text" name="valor" id="data" class="form-control form-control-danger">
+                                    <div class="input-group-addon">
+                                        <span><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                                <div class="form-control-feedback">Preenchimento Obrigatório!</div>
+                            </div>
+                         </div>
+
+                          <div class="row">
+                              <div class="form-group has-danger col-md-4">
+                                <label class="form-control-label" for="emissor">Emissor</label>
+                                    <input type="text" name="emissor" id="emissor" class="form-control  form-control-danger">
+                                    <div class="form-control-feedback">Preenchimento Obrigatório!</div>
+                              </div>
+                         </div>
+                    </div>
+                    
+                    <div class="painel painel-tipo-certidao">
+                         <div class="row">
+                              <div class="form-group col-md-4">
+                                <label class="control-label" for="tipo-certidao">Tipo de certidão</label>
+                                <select name="tipo-certidao" id="tipo-certidao" class="form-control" disabled>
+                                    <option value="nascimento">Nascimento</option>
+                                    <option value="casamento">Casamento</option>
+                                    <option value="divorcio">Divórcio</option>
+                                </select>
+                              </div>
+                              
+                              <div class="form-group col-md-6">
+                                <label class="control-label" for="nome-cartorio">Nome do cartório</label>
+                                <div class="input-group">
+                                    <input type="text" name="nome-cartorio" id="nome-cartorio" class="form-control">
+                                </div>
+                              </div>
+                        </div>
+                        
+                        <div class="row">
+                             <div class="form-group col-md-4">
+                                <label class="control-label" for="livro">Livro</label>
+                                <div class="input-group">
+                                    <input type="text" name="livro" id="livro" class="form-control">
+                                </div>
+                              </div>
+                              
+                              <div class="form-group col-md-4">
+                                <label class="control-label" for="folha">Folha</label>
+                                <div class="input-group">
+                                    <input type="number" name="folha" id="folha" class="form-control">
+                                </div>
+                              </div>
+                              
+                              <div class="form-group col-md-4">
+                                <label class="control-label" for="termo">Termo</label>
+                                <div class="input-group">
+                                    <input type="number" name="termo" id="termo" class="form-control">
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    
+                    <div class="painel painel-carteira-trabalho">
+                       <label class="title-panel">Carteira de Trabalho</label>
+                       
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="serie">Série</label>
+                                <div class="input-group">
+                                    <input type="number" name="serie" id="serie" class="form-control">
+                                </div>
+                              </div>
+                              
+                              <div class="form-group col-md-4">
+                                <label class="control-label" for="estado">Estado</label>
+                                <div class="input-group">
+                                    <input type="text" name="estado" id="estado" class="form-control">
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    
+                       <div class="painel">
+                       <label class="title-panel">Titulo de Eleitor</label>
+                       
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="secao">Seção</label>
+                                <div class="input-group">
+                                    <input type="number" name="secao" id="secao" class="form-control">
+                                </div>
+                              </div>
+                              
+                              <div class="form-group col-md-4">
+                                <label class="control-label" for="zona">Zona</label>
+                                <div class="input-group">
+                                    <input type="text" name="zona" id="zona" class="form-control">
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    
+                     
+                 </div>
+
+                <div class="tab-pane  fade" id="perfil">
+                    Perfil Andrew Carnegie was a self-made steel tycoon and one of the wealthiest businessmen of 19th century. He later dedicated his life to philanthropic endeavors.
+                </div>
+
+                <div class="tab-pane  fade" id="mensagem">
+                    Mensagem Andrew Carnegie was a self-made steel tycoon and one of the wealthiest businessmen of 19th century. He later dedicated his life to philanthropic endeavors.
+                </div>
+                 
+                <button type="button" class="btn btn-default" style="display: true;" onclick="salvarDados()">Submit</button>
+             </div>
+              
+              
+            
+            
+            </form>
+		
+		 </div>
+    
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="js/jquery-3.1.1.slim.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js\bootstrap-datepicker.min.js"></script>
+	<script src="js\bootstrap-datepicker.pt-BR.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
 </html>
